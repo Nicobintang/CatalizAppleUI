@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*teks footer hilang pada saat layar hp (bagian ul) start */
+@media (max-width: 767px) { 
+    ul {
+      display: none;
+    }
+  }
+  /*teks fo0ter hilang pada saat layar hp (bagian ul) end*/
+
+/* border bawah bagian h4 start */
+@media (max-width: 767px) {
+  h4 {
+    border-bottom: 0.1px solid #3d3d3d; 
+  }
+}
+/* border bawah bagian h4 end */
+
+/* class tanda + bagian pojok kanan pada layar hp start*/
+@media (max-width: 767px) {
+  h4 {
+    position: relative;
+    padding-right: 20px;
+  }
+
+  h4::after {
+    content: "+"; 
+    color: #000; 
+    font-size: 1.2rem; 
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+/* class tanda + bagian pojok kanan pada layar hp end*/
+
+/* Mengatur menjadi satu kolom start*/
+@media (max-width: 600px) { 
+  .grid-cols-2 {
+    grid-template-columns: 1fr; 
+  }
+}
+/* Mengatur menjadi satu kolom end*/
+
+/* Mengatur menjadi dua kolom start*/
+@media (min-width: 769px) { 
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+/* Mengatur menjadi dua kolom end*/
