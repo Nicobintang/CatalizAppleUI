@@ -1,14 +1,24 @@
 <template>
-    <div>
-    <h1>Sign Out</h1>
-    <button @click="logout">Sign Out</button>
+    <div class="text-center">
+    <h1 class="text-2xl font-bold mb-4">Sign Out</h1>
+    <button @click="logout" class="bg-red-500 text-white px-4 py-2 rounded">Sign Out</button>
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import { useAuthStore } from '../store';
 
-const logout = () => {
-    useAuthStore().logout();
-};
+export default defineComponent({
+    setup() {
+    const logout = () => {
+        useAuthStore().logout();
+    };
+
+    return {
+        logout,
+    };
+    },
+});
 </script>
+  

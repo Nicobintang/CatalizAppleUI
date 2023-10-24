@@ -1,14 +1,23 @@
 <template>
-    <div>
-        <h1>Sign In</h1>
-        <button @click="login">Sign In</button>
+    <div class="text-center">
+    <h1 class="text-2xl font-bold mb-4">Sign In</h1>
+    <button @click="login" class="bg-blue-500 text-white px-4 py-2 rounded">Sign In</button>
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import { useAuthStore } from '../store';
 
-const login = () => {
-    useAuthStore().login();
+export default {
+    setup() {
+    const login = () => {
+        useAuthStore().login();
+    };
+
+    return {
+        login,
+    };
+    },
 };
 </script>
