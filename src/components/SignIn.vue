@@ -5,7 +5,7 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import { useAuthStore } from '../store';
 
 const login = () => {

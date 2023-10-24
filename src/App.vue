@@ -22,8 +22,7 @@ const logout = () => {
           <div class="flex w-[1036px] items-center justify-around px-0 max-[835px]:hidden">
             <div class="flex items-center justify-between">
               <a href="#" v-if="authStore.isLoggedIn" @click="logout" class="text-xs pt-1">Sign Out</a>
-              <a href="#" v-else @click="login" class="text-xs pt-1">Sign In</a>            
-              
+              <a href="#" v-else @click="login" class="text-xs pt-1">Sign In</a>              
             </div>          
             <RouterLink to="/" href="#"> <img class="w-4 object-scale-down" src="https://www.freepnglogos.com/uploads/apple-logo-png/carve-apple-logo-pumpkin-5.png" alt="logo"></RouterLink>
             <a href="#" class="text-xs">Store</a>

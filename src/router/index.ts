@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-import SupportView from '@/views/SupportView.vue'
-import TvHomeView from '@/views/TvHomeview.vue'
+import HomeView from '../views/HomeView.vue'
+import SupportView from '../views/SupportView.vue'
+import TvHomeView from '../views/TvHomeview.vue'
 import SignIn from '../components/SignIn.vue'
 import SignOut from '../components/SignOut.vue'
 
