@@ -292,6 +292,12 @@
   </main>
   </template>
   
-  <script lang="ts">
-  import Footer from '@/Layout/Headers.vue'
-  </script>
+<script lang="ts">
+import Headers from '@/Layout/Headers.vue'
+
+export default {
+  components: {
+    Headers,
+  },
+}
+</script>

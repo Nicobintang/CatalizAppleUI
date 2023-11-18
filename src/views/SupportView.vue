@@ -11,5 +11,11 @@
 </template>
 
 <script lang="ts">
-import Footer from '@/Layout/Headers.vue'
+import Headers from '@/Layout/Headers.vue'
+
+export default {
+  components: {
+    Headers,
+  },
+}
 </script>
