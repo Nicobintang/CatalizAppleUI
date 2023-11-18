@@ -3,7 +3,7 @@
     <div class="flex items-center justify-center h-screen bg-cyan-900">
         <div class="max-w-md w-full bg-cyan-950 p-8 rounded-lg">
             <h1 class="text-center text-5xl font-bold mb-20 bg-gradient-to-r from-black to-white text-transparent bg-clip-text text-green-500 shadow-lg">LOGIN</h1>
-            <div v-show="isVerified == -1" class="text-red-500">Wrong username or password</div>
+            <div v-show="isVerified == -1" class="text-red-500">username Atau password Anda salah</div>
                 <!-- inpit username-->
                 <froms
                 :id="'username'"

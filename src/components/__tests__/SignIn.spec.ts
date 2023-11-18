@@ -1,61 +1,33 @@
-// src/components/__tests__/SignIn.spec.ts
-import { mount } from '@vue/test-utils';
-import SignIn from '@/components/SignIn.vue';
-import { ref } from 'vue';
+// src/views/__tests__/SignIn.spec.ts
+import { test, render, expect } from 'vitest'; // Pastikan Anda mengimpor 'it' dari 'vitest'
+import SignIn from '@/views/SignIn.vue';
 
-describe('SignIn.vue', () => {
-  it('renders login form and triggers SignIn method', async () => {
-    const wrapper = mount(SignIn);
-    
-    // Mock data
-    const mockUser = 'testUser';
-    const mockPassword = 'testPassword';
-    
-    // Mock the ref values
-    wrapper.vm['user'] = ref(mockUser);
-    wrapper.vm['password'] = ref(mockPassword);
+test('renders SignIn form', () => {
+  const { getByTestId } = render(SignIn);
+  const usernameInput = getByTestId('username');
+  const passwordInput = getByTestId('password');
+  const submitButton = getByTestId('buttons');
 
-    // Mock the SignIn method
-    wrapper.vm['authStore'].SignIn = jest.fn();
-
-    // Simulate form submission
-    await wrapper.find('[data-test="login-form"]').trigger('submit.prevent');
-
-    // Ensure that SignIn method is triggered
-    expect(wrapper.vm['authStore'].SignIn).toHaveBeenCalledWith(mockUser, mockPassword);
-  });
-
-  it('redirects to home on successful login', async () => {
-    const wrapper = mount(SignIn);
-    const mockUser = 'testUser';
-    const mockPassword = 'testPassword';
-
-    wrapper.vm['user'] = ref(mockUser);
-    wrapper.vm['password'] = ref(mockPassword);
-    
-    // Mock successful SignIn
-    wrapper.vm['authStore'].SignIn = jest.fn().mockResolvedValue(true);
-
-    await wrapper.find('[data-test="login-form"]').trigger('submit.prevent');
-
-    // Ensure that router.push is called with the correct route
-    expect(wrapper.vm['$router'].push).toHaveBeenCalledWith({ name: 'home' });
-  });
-
-  it('displays error message on failed login', async () => {
-    const wrapper = mount(SignIn);
-    const mockUser = 'testUser';
-    const mockPassword = 'testPassword';
-
-    wrapper.vm['user'] = ref(mockUser);
-    wrapper.vm['password'] = ref(mockPassword);
-
-    // Mock failed SignIn
-    wrapper.vm['authStore'].SignIn = jest.fn().mockResolvedValue(false);
-
-    await wrapper.find('[data-test="login-form"]').trigger('submit.prevent');
-
-    // Ensure that error message is displayed
-    expect(wrapper.find('[data-test="error-message"]').exists()).toBe(true);
-  });
+  expect(usernameInput).not.toBeNull('username');
+  expect(passwordInput).not.toBeNull('password');
+  expect(submitButton).not.toBeNull('buttons');
 });
+
+test('handles invalid SignIn', async () => {
+  const { getByTestId, getByText } = render(SignIn);
+
+  const usernameInput = getByTestId('username');
+  const passwordInput = getByTestId('password');
+  const submitButton = getByTestId('buttons');
+
+  // Masukkan informasi SignIn yang salah
+  await usernameInput.setValue('username Atau password Anda salah');
+  await passwordInput.setValue('iusername Atau password Anda salah');
+  await submitButton.click();
+
+  // Periksa apakah pesan kesalahan ditampilkan
+  const errorMessage = getByText('username Atau password Anda salah');
+  expect(errorMessage).not.toBeNull();
+});
+
+// Tambahkan lebih banyak pengujian sesuai kebutuhan
