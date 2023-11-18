@@ -2,21 +2,21 @@
     <div class="flex flex-col gap-1">
         <div>
             <input
-            :id="id"
-            :type="type"
-            :placeholder="placeholder"
-            class="p-2 rounded-sm w-full bg-transparent text-black border-b-2 border-green-200 "
-            :value="modelValue"
-            @input="$emit('update:modelValue', ($event.target as HTMLButtonElement).value)"
+                :id="id"
+                :type="type"
+                :placeholder="placeholder"
+                class="p-2 rounded-sm w-full bg-transparent text-black border-b-2 border-green-200 "
+                :value="modelValue"
+                @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
             />
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue'
+import { defineProps } from 'vue'
 
-defineProps({
+const props = defineProps({
     label: String,
     placeholder: String,
     type: String,
@@ -24,6 +24,4 @@ defineProps({
     modelValue: String
 })
 
-defineEmits(['update:modelValue'])
 </script>
-
