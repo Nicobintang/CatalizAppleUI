@@ -19,7 +19,6 @@
                 :placeholder="'Password'"
                 v-model="password"
                 />
-                <!-- remember me and forgot password container -->
                 <div class="flex justify-between items-center w-52 md:w-64 lg:w-[19rem]">
             </div>
             <!-- sign-in buttons -->
@@ -46,7 +45,7 @@ const SignIn = (): void => {
     authStore.SignIn(user.value, password.value)
     if (authStore.isSignIn == false) {
         isVerified.value = -1
-        console.log('Wrong username or password', authStore.isSignIn)
+        console.log('username Atau password Anda salah', authStore.isSignIn)
     } else {
         isVerified.value = 1
         console.log(user, password, authStore.isSignIn)

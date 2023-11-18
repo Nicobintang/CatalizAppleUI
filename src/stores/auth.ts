@@ -20,7 +20,6 @@ export const useAuthStore = defineStore('auth', () => {
     }
 
     const SignOut = (): void => {
-        // Reset state and perform any necessary cleanup for sign out
         username.value = ''
         role.value = ''
         isSignIn.value = false
