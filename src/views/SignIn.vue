@@ -1,17 +1,17 @@
 <template>
     <!-- login view container -->
-    <div class="flex items-center justify-center h-screen bg-cyan-900">
-        <div class="max-w-md w-full bg-cyan-950 p-8 rounded-lg">
-            <h1 class="text-center text-5xl font-bold mb-20 bg-gradient-to-r from-black to-white text-transparent bg-clip-text text-green-500 shadow-lg">LOGIN</h1>
+    <div class="flex items-center justify-center h-screen bg-white">
+        <div class="max-w-md w-full bg-gray-200 p-8">
+            <h1 class="text-center text-5xl font-bold mb-20  text-black">LOGIN</h1>
             <div v-show="isVerified == -1" class="text-red-500">username Atau password Anda salah</div>
-                <!-- inpit username-->
+                <!-- form username-->
                 <froms
                 :id="'username'"
                 :type="'text'"
                 :placeholder="'Username'"
                 v-model="user"
                 />
-                <!-- input password -->
+                <!-- form password -->
                 <froms
                 :id="'password'"
                 :label="'Password'"
