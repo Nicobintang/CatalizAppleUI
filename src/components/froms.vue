@@ -5,7 +5,7 @@
                 :id="id"
                 :type="type"
                 :placeholder="placeholder"
-                class="p-2 rounded-sm w-full bg-transparent text-black border-b-2 border-green-200 "
+                class="p-2 rounded-sm w-full bg-transparent text-black border-b-2 border-black "
                 :value="modelValue"
                 @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
             />

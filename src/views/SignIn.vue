@@ -1,8 +1,8 @@
 <template>
     <!-- login view container -->
-    <div class="flex items-center justify-center h-screen bg-white">
-        <div class="max-w-md w-full bg-gray-200 p-8">
-            <h1 class="text-center text-5xl font-bold mb-20  text-black">LOGIN</h1>
+    <div class="flex items-center justify-center h-screen bg-cuy">
+        <div class="max-w-md w-full bg-cuy p-10 ml-10">
+            <h1 class="text-center text-3xl mb-20  text-black">LOGIN</h1>
             <div v-show="isVerified == -1" class="text-red-500">username Atau password Anda salah</div>
                 <!-- form username-->
                 <froms
@@ -23,6 +23,9 @@
             </div>
             <!-- sign-in buttons -->
             <buttons :text="'Sign In'" class="mt-10" @click.prevent="SignIn"></buttons>
+        </div>
+        <div>
+            <img src="../image/logo.jpg" alt="logoapple">
         </div>
     </div>
 </template>

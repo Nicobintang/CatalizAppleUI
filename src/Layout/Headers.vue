@@ -5,9 +5,7 @@
             <div class="flex justify-center">
                 <!-- Navbar for large screens -->
                 <div class="flex w-[1036px] items-center justify-around px-0 max-[835px]:hidden">
-                <div class="flex items-center justify-between">
-                    <RouterLink v-if="authStore.isSignIn" @click="SignOut" to="#">Sign Out</RouterLink>             
-                </div>          
+                          
                 <RouterLink to="/" href="#"> <img class="w-4 object-scale-down" src="https://www.freepnglogos.com/uploads/apple-logo-png/carve-apple-logo-pumpkin-5.png" alt="logo"></RouterLink>
                 <a href="#" class="text-xs">Store</a>
                 <a href="#" id="app" class="text-xs">Mac</a>
@@ -22,7 +20,10 @@
                 <RouterLink to="/support" href="#" class="text-xs">Support</RouterLink>
                 <a href="#" class="text-xs"><img class="w-4 object-scale-down" src="https://cdn-icons-png.flaticon.com/128/751/751463.png" alt=""></a>
                 <a href="#"><img width="24" height="24" src="https://cdn-icons-png.flaticon.com/128/11530/11530382.png" alt="shopping-bag"></a>
+                <div class="flex items-center justify-between text-xs">
+                    <RouterLink v-if="authStore.isSignIn" @click="SignOut" to="#">Sign Out</RouterLink>             
                 </div>
+            </div>
             </div>
             <!-- Navbar for small screens (hidden by default) -->
             <div id="menuToggle" class="flex justify-between px-5 min-[836px]:hidden">
